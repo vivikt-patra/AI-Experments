@@ -1,4 +1,4 @@
-#function to peform DFS
+#function to perform DFS
 
 def dfs(graph,node,visited):
     if node not in visited:
@@ -16,8 +16,25 @@ for i in range(n):
     neighbors=input(f"Enter adjacent vertices of {vertex} (space-separated): ").split()
     graph[vertex]=neighbors
 
-start=input("Enter the statng vertex: ")
+start=input("Enter the starting vertex: ")
 print("\nGraph: ",graph)
 print("DFS Traversal: ",end=" ")
 visited=set()
-dfs=(graph,start,visited)
+dfs(graph,start,visited)
+
+#output
+'''
+Enter the no. of vertices: 4
+Enter vertex1: A
+Enter adjacent vertices of A (space-separated): B C
+Enter vertex2: B
+Enter adjacent vertices of B (space-separated): D
+Enter vertex3: C
+Enter adjacent vertices of C (space-separated): D
+Enter vertex4: D
+Enter adjacent vertices of D (space-separated): 
+Enter the starting vertex: A
+
+Graph:  {'A': ['B', 'C'], 'B': ['D'], 'C': ['D'], 'D': []}
+DFS Traversal:  A B D C 
+'''
