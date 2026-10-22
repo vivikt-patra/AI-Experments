@@ -34,8 +34,15 @@ max_iterations = int(input("Enter maximum iterations: "))
 
 best_position, best_value = hill_climbing(start, step_size, max_iterations)
 
-print("\n Best Postion= ",best_position)
+print("\n Best Position= ",best_position)
 print("Maximum Value = ",best_value)
 
+#output
+'''
+Enter the starting value: 0.0
+Enter the step value: 0.5
+Enter maximum iterations: 20
 
-
+ Best Position=  5.0
+Maximum Value =  25.0
+'''
