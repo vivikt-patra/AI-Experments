@@ -1,1 +1,29 @@
-{"cells":[{"cell_type":"code","source":["#Minimax Algorithm\n","def minimax(depth, nodeIndex, isMax, scores, height):\n","  #Base Case:Leaf node reached\n","  if depth==height:\n","    return scores[nodeIndex]\n","\n","  if isMax:\n","    return max(\n","        minimax(depth+1, nodeIndex*2, False, scores, height),\n","        minimax(depth+1, nodeIndex*2+1, False, scores, height)\n","    )\n","  else:\n","    return min(\n","        minimax(depth+1, nodeIndex*2, True, scores, height),\n","        minimax(depth+1, nodeIndex*2+1, True, scores, height)\n","    )\n","\n","#Mia mia\n","scores=list(map(int,input(\"Enter 8 Leaf Node values: \").split()))\n","height=3\n","result=minimax(0, 0, True, scores, height)\n","print(\"\\n The Optimal value is: \",result)"],"metadata":{"id":"sLdzMS02wtnr","executionInfo":{"status":"ok","timestamp":1786334218454,"user_tz":-330,"elapsed":25291,"user":{"displayName":"","userId":""}},"outputId":"edd5f537-24a2-48d5-ca55-e28dfad2c509","colab":{"base_uri":"https://localhost:8080/"}},"execution_count":2,"outputs":[{"output_type":"stream","name":"stdout","text":["Enter 8 Leaf Node values: 45 476 3 76 34 93 19 43 \n","\n"," The Optimal value is:  76\n"]}]},{"cell_type":"code","source":[],"metadata":{"id":"0agtlMl4zv7D"},"execution_count":null,"outputs":[]}],"metadata":{"colab":{"name":"Welcome To Colab","provenance":[{"file_id":"/v2/external/notebooks/intro.ipynb","timestamp":1786334386906}]},"kernelspec":{"display_name":"Python 3","name":"python3"}},"nbformat":4,"nbformat_minor":0}
+#Minimax Algorithm
+def minimax(depth, nodeIndex, isMax, scores, height):
+    #Base Case:Leaf node reached
+    if depth==height:
+        return scores[nodeIndex]
+
+    if isMax:
+        return max(
+            minimax(depth+1, nodeIndex*2, False, scores, height),
+            minimax(depth+1, nodeIndex*2+1, False, scores, height)
+        )
+    else:
+        return min(
+            minimax(depth+1, nodeIndex*2, True, scores, height),
+            minimax(depth+1, nodeIndex*2+1, True, scores, height)
+        )
+
+#Main program
+scores=list(map(int,input("Enter 8 Leaf Node values: ").split()))
+height=3
+result=minimax(0, 0, True, scores, height)
+print("\nThe Optimal value is: ",result)
+
+#output
+'''
+Enter 8 Leaf Node values: 45 476 3 76 34 93 19 43
+
+The Optimal value is:  76
+'''
